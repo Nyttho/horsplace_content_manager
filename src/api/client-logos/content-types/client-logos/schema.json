@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "client_logoz",
+  "info": {
+    "singularName": "client-logos",
+    "pluralName": "client-logoz",
+    "displayName": "ClientLogos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ClientLogo": {
+      "displayName": "ClientLogo",
+      "type": "component",
+      "repeatable": true,
+      "component": "client-logo.client-logo"
+    }
+  }
+}
