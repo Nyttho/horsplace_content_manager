@@ -369,27 +369,28 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiClientLogosClientLogos extends Struct.SingleTypeSchema {
-  collectionName: 'client_logoz';
+export interface ApiClientClient extends Struct.CollectionTypeSchema {
+  collectionName: 'clients';
   info: {
-    displayName: 'ClientLogos';
-    pluralName: 'client-logoz';
-    singularName: 'client-logos';
+    displayName: 'client';
+    pluralName: 'clients';
+    singularName: 'client';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    ClientLogo: Schema.Attribute.Component<'client-logo.client-logo', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::client-logos.client-logos'
+      'api::client.client'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -397,61 +398,30 @@ export interface ApiClientLogosClientLogos extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiHeroSectionHeroSection extends Struct.SingleTypeSchema {
-  collectionName: 'hero_sections';
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
   info: {
-    displayName: 'hero_section';
-    pluralName: 'hero-sections';
-    singularName: 'hero-section';
+    description: '';
+    displayName: 'home';
+    pluralName: 'homes';
+    singularName: 'home';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    button_text: Schema.Attribute.String;
+    contactSection: Schema.Attribute.Component<'home.contact-section', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    cta_text: Schema.Attribute.String;
+    heroSection: Schema.Attribute.Component<'home.hero-section', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::hero-section.hero-section'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    video_file: Schema.Attribute.Media<'files' | 'videos'>;
-  };
-}
-
-export interface ApiTestimonialTestimonial extends Struct.SingleTypeSchema {
-  collectionName: 'testimonials';
-  info: {
-    displayName: 'testimonial';
-    pluralName: 'testimonials';
-    singularName: 'testimonial';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    author_img: Schema.Attribute.Media<'images' | 'files'>;
-    author_name: Schema.Attribute.String;
-    author_title: Schema.Attribute.Text;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::testimonial.testimonial'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    quote: Schema.Attribute.Text;
+    statistics: Schema.Attribute.Component<'home.statistic', false>;
+    testimonial: Schema.Attribute.Component<'home.testimonial', false>;
+    trustSection: Schema.Attribute.Component<'home.trust-section', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -967,9 +937,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::client-logos.client-logos': ApiClientLogosClientLogos;
-      'api::hero-section.hero-section': ApiHeroSectionHeroSection;
-      'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::client.client': ApiClientClient;
+      'api::home.home': ApiHomeHome;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

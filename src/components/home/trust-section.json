@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_home_trust_sections",
+  "info": {
+    "displayName": "trustSection"
+  },
+  "options": {},
+  "attributes": {
+    "catchPhrase": {
+      "type": "text"
+    },
+    "clients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client.client"
+    }
+  }
+}

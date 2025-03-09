@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_statistic_cards",
+  "info": {
+    "displayName": "StatisticCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "percentage": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

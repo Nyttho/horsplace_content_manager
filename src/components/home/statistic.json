@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_statistics",
+  "info": {
+    "displayName": "statisticSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "statistics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.statistic-card"
+    }
+  }
+}
