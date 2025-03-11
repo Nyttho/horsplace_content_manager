@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_solution_what_sections",
+  "info": {
+    "displayName": "whatSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "whatList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.what-list"
+    }
+  }
+}

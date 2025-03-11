@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface EstimationSectionEstimationSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estimation_section_estimation_sections';
+  info: {
+    displayName: 'estimationSection';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface HomeContactSection extends Struct.ComponentSchema {
   collectionName: 'components_home_contact_sections';
   info: {
@@ -74,6 +86,45 @@ export interface HomeTrustSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SolutionHeader extends Struct.ComponentSchema {
+  collectionName: 'components_solution_headers';
+  info: {
+    displayName: 'header';
+  };
+  attributes: {
+    headerImg: Schema.Attribute.Media<'images'>;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SolutionWhatSection extends Struct.ComponentSchema {
+  collectionName: 'components_solution_what_sections';
+  info: {
+    description: '';
+    displayName: 'whatSection';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    whatList: Schema.Attribute.Component<'ui.what-list', true>;
+  };
+}
+
+export interface SolutionWhySection extends Struct.ComponentSchema {
+  collectionName: 'components_solution_why_sections';
+  info: {
+    description: '';
+    displayName: 'whySection';
+  };
+  attributes: {
+    productIllustration: Schema.Attribute.Media<'images', true>;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    whyList: Schema.Attribute.Component<'ui.why-list', true>;
+  };
+}
+
 export interface UiButton extends Struct.ComponentSchema {
   collectionName: 'components_ui_buttons';
   info: {
@@ -84,16 +135,44 @@ export interface UiButton extends Struct.ComponentSchema {
   };
 }
 
+export interface UiWhatList extends Struct.ComponentSchema {
+  collectionName: 'components_ui_what_lists';
+  info: {
+    displayName: 'whatList';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'>;
+    primary: Schema.Attribute.Text;
+    secondary: Schema.Attribute.Text;
+  };
+}
+
+export interface UiWhyList extends Struct.ComponentSchema {
+  collectionName: 'components_ui_why_lists';
+  info: {
+    displayName: 'whyList';
+  };
+  attributes: {
+    listItem: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'estimation-section.estimation-section': EstimationSectionEstimationSection;
       'home.contact-section': HomeContactSection;
       'home.hero-section': HomeHeroSection;
       'home.statistic': HomeStatistic;
       'home.statistic-card': HomeStatisticCard;
       'home.testimonial': HomeTestimonial;
       'home.trust-section': HomeTrustSection;
+      'solution.header': SolutionHeader;
+      'solution.what-section': SolutionWhatSection;
+      'solution.why-section': SolutionWhySection;
       'ui.button': UiButton;
+      'ui.what-list': UiWhatList;
+      'ui.why-list': UiWhyList;
     }
   }
 }

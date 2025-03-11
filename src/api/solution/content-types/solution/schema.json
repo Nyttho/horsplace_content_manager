@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "solutions",
+  "info": {
+    "singularName": "solution",
+    "pluralName": "solutions",
+    "displayName": "Solution"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.header"
+    },
+    "whatSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.what-section"
+    },
+    "whySection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "solution.why-section"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_solution_why_sections",
+  "info": {
+    "displayName": "whySection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "productIllustration": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "whyList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.why-list"
+    }
+  }
+}

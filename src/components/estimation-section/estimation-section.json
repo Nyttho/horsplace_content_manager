@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_estimation_section_estimation_sections",
+  "info": {
+    "displayName": "estimationSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

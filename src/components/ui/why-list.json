@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ui_why_lists",
+  "info": {
+    "displayName": "whyList"
+  },
+  "options": {},
+  "attributes": {
+    "listItem": {
+      "type": "string"
+    }
+  }
+}
