@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_about_page_about_uses",
+  "info": {
+    "displayName": "About us",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "text2": {
+      "type": "text"
+    },
+    "text3": {
+      "type": "text"
+    },
+    "text4": {
+      "type": "text"
+    },
+    "text5": {
+      "type": "text"
+    }
+  }
+}

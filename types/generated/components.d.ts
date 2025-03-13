@@ -1,5 +1,31 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutPageAboutUs extends Struct.ComponentSchema {
+  collectionName: 'components_about_page_about_uses';
+  info: {
+    description: '';
+    displayName: 'About us';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    text2: Schema.Attribute.Text;
+    text3: Schema.Attribute.Text;
+    text4: Schema.Attribute.Text;
+    text5: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutPageFaq extends Struct.ComponentSchema {
+  collectionName: 'components_about_page_faqs';
+  info: {
+    displayName: 'faq';
+  };
+  attributes: {
+    question: Schema.Attribute.Component<'question.question-item', true>;
+  };
+}
+
 export interface EstimationSectionEstimationSection
   extends Struct.ComponentSchema {
   collectionName: 'components_estimation_section_estimation_sections';
@@ -86,6 +112,17 @@ export interface HomeTrustSection extends Struct.ComponentSchema {
   };
 }
 
+export interface QuestionQuestionItem extends Struct.ComponentSchema {
+  collectionName: 'components_question_question_items';
+  info: {
+    displayName: 'questionItem';
+  };
+  attributes: {
+    question: Schema.Attribute.Text;
+    response: Schema.Attribute.Text;
+  };
+}
+
 export interface SolutionHeader extends Struct.ComponentSchema {
   collectionName: 'components_solution_headers';
   info: {
@@ -160,6 +197,8 @@ export interface UiWhyList extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about-page.about-us': AboutPageAboutUs;
+      'about-page.faq': AboutPageFaq;
       'estimation-section.estimation-section': EstimationSectionEstimationSection;
       'home.contact-section': HomeContactSection;
       'home.hero-section': HomeHeroSection;
@@ -167,6 +206,7 @@ declare module '@strapi/strapi' {
       'home.statistic-card': HomeStatisticCard;
       'home.testimonial': HomeTestimonial;
       'home.trust-section': HomeTrustSection;
+      'question.question-item': QuestionQuestionItem;
       'solution.header': SolutionHeader;
       'solution.what-section': SolutionWhatSection;
       'solution.why-section': SolutionWhySection;

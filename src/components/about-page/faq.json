@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_about_page_faqs",
+  "info": {
+    "displayName": "faq"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": true,
+      "component": "question.question-item"
+    }
+  }
+}
