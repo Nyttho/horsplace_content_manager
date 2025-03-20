@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "what_lists",
+  "info": {
+    "singularName": "what-list",
+    "pluralName": "what-lists",
+    "displayName": "whatList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "primaryText": {
+      "type": "text"
+    },
+    "secondaryText": {
+      "type": "text"
+    }
+  }
+}

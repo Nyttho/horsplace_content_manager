@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faq_lists",
+  "info": {
+    "singularName": "faq-list",
+    "pluralName": "faq-lists",
+    "displayName": "faqList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "response": {
+      "type": "text"
+    }
+  }
+}
