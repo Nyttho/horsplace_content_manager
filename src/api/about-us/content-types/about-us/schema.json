@@ -15,11 +15,6 @@
       "type": "component",
       "repeatable": false,
       "component": "about-page.about-us"
-    },
-    "faq": {
-      "type": "component",
-      "repeatable": false,
-      "component": "about-page.faq"
     }
   }
 }

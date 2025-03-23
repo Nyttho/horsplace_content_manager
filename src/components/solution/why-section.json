@@ -19,11 +19,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "whyList": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ui.why-list"
     }
   }
 }

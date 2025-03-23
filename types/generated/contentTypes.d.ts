@@ -385,7 +385,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    faq: Schema.Attribute.Component<'about-page.faq', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -517,9 +516,36 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOfferOffer extends Struct.CollectionTypeSchema {
+  collectionName: 'offers';
+  info: {
+    description: '';
+    displayName: 'offer';
+    pluralName: 'offers';
+    singularName: 'offer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::offer.offer'> &
+      Schema.Attribute.Private;
+    offers: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSolutionSolution extends Struct.SingleTypeSchema {
   collectionName: 'solutions';
   info: {
+    description: '';
     displayName: 'Solution';
     pluralName: 'solutions';
     singularName: 'solution';
@@ -577,6 +603,35 @@ export interface ApiStatisticStatistic extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVideoAnimationVideoAnimation
+  extends Struct.SingleTypeSchema {
+  collectionName: 'video_animations';
+  info: {
+    displayName: 'videoAnimation';
+    pluralName: 'video-animations';
+    singularName: 'video-animation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::video-animation.video-animation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoUrl: Schema.Attribute.String;
+  };
+}
+
 export interface ApiWhatListWhatList extends Struct.CollectionTypeSchema {
   collectionName: 'what_lists';
   info: {
@@ -601,6 +656,34 @@ export interface ApiWhatListWhatList extends Struct.CollectionTypeSchema {
     primaryText: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     secondaryText: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWhyListWhyList extends Struct.CollectionTypeSchema {
+  collectionName: 'why_lists';
+  info: {
+    displayName: 'whyList';
+    pluralName: 'why-lists';
+    singularName: 'why-list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    listElement: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::why-list.why-list'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1121,9 +1204,12 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::faq-list.faq-list': ApiFaqListFaqList;
       'api::home.home': ApiHomeHome;
+      'api::offer.offer': ApiOfferOffer;
       'api::solution.solution': ApiSolutionSolution;
       'api::statistic.statistic': ApiStatisticStatistic;
+      'api::video-animation.video-animation': ApiVideoAnimationVideoAnimation;
       'api::what-list.what-list': ApiWhatListWhatList;
+      'api::why-list.why-list': ApiWhyListWhyList;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

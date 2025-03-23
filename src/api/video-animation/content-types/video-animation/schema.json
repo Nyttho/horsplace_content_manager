@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "video_animations",
+  "info": {
+    "singularName": "video-animation",
+    "pluralName": "video-animations",
+    "displayName": "videoAnimation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "videoUrl": {
+      "type": "string"
+    }
+  }
+}

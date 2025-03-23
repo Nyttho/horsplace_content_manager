@@ -11,11 +11,6 @@
     },
     "text": {
       "type": "text"
-    },
-    "whatList": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ui.what-list"
     }
   }
 }

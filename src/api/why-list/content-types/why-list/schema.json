@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "why_lists",
+  "info": {
+    "singularName": "why-list",
+    "pluralName": "why-lists",
+    "displayName": "whyList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "listElement": {
+      "type": "string"
+    }
+  }
+}

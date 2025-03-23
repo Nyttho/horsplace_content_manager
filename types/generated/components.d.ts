@@ -16,16 +16,6 @@ export interface AboutPageAboutUs extends Struct.ComponentSchema {
   };
 }
 
-export interface AboutPageFaq extends Struct.ComponentSchema {
-  collectionName: 'components_about_page_faqs';
-  info: {
-    displayName: 'faq';
-  };
-  attributes: {
-    question: Schema.Attribute.Component<'question.question-item', true>;
-  };
-}
-
 export interface EstimationSectionEstimationSection
   extends Struct.ComponentSchema {
   collectionName: 'components_estimation_section_estimation_sections';
@@ -144,7 +134,6 @@ export interface SolutionWhatSection extends Struct.ComponentSchema {
   attributes: {
     text: Schema.Attribute.Text;
     title: Schema.Attribute.String;
-    whatList: Schema.Attribute.Component<'ui.what-list', true>;
   };
 }
 
@@ -158,7 +147,6 @@ export interface SolutionWhySection extends Struct.ComponentSchema {
     productIllustration: Schema.Attribute.Media<'images', true>;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
-    whyList: Schema.Attribute.Component<'ui.why-list', true>;
   };
 }
 
@@ -198,7 +186,6 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about-page.about-us': AboutPageAboutUs;
-      'about-page.faq': AboutPageFaq;
       'estimation-section.estimation-section': EstimationSectionEstimationSection;
       'home.contact-section': HomeContactSection;
       'home.hero-section': HomeHeroSection;
